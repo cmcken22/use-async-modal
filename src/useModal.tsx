@@ -15,7 +15,7 @@ import {
   UseModalOnOpenOptions,
 } from "./useModal.interface";
 
-export function useModal<ResultType>({
+export function useModal<ResultType, ModalProps>({
   Component,
   overlayStyles,
   overlayClassName,
@@ -28,9 +28,12 @@ export function useModal<ResultType>({
   blockBodyScroll,
   onOpen,
   onClose,
-}: UseModalOptions<ResultType>): UseModalReturnType<ResultType> {
+  fuck
+}: UseModalOptions<ResultType>): UseModalReturnType<ResultType, ModalProps> {
   const addPortal = useAddPortal();
   const removePortal = useRemovePortal();
+
+  console.log('fuck:', fuck);
 
   const onResolve = (resolve: ResolveFunction<ResultType>, containerIdPostfix: string) => {
     return (result: ResultType) => {
@@ -52,7 +55,7 @@ export function useModal<ResultType>({
     };
   };
 
-  const showModal = (props: any) => {
+  const showModal = (props?: ModalProps) => {
     return new Promise<ResultType>((resolve) => {
       createModal(resolve, props);
     });
@@ -102,7 +105,7 @@ export function useModal<ResultType>({
     });
   };
 
-  const createModal = (resolve: ResolveFunction<ResultType>, props: any) => {
+  const createModal = (resolve: ResolveFunction<ResultType>, props?: ModalProps) => {
     const containerIdPostfix = getRandomPostfix();
     const body = document.querySelector("body");
     const modalContainer = document.createElement("div");

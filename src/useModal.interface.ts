@@ -10,6 +10,7 @@ export type UseModalOptions<ResultType> = UseModalOptionsBasic<ResultType>;
 
 export interface UseModalOptionsBasic<ResultType> {
   Component: FC<UseModalComponentProps<ResultType>>;
+  fuck: string;
   overlayStyles?: CSSProperties;
   overlayClassName?: string;
   closeOnEsc?: boolean;
@@ -37,4 +38,4 @@ export interface UseModalContainerRef {
   blockBodyScroll: boolean;
 }
 
-export type UseModalReturnType<ResultType = unknown> = (props?: any) => Promise<ResultType>;
+export type UseModalReturnType<ResultType = unknown, ModalProps = any> = (props?: ModalProps) => Promise<ResultType>;
