@@ -27,7 +27,7 @@ export function useModal<ResultType, ModalProps>({
   closeTimeoutMs,
   blockBodyScroll,
   onOpen,
-  onClose
+  onClose,
 }: UseModalOptions<ResultType>): UseModalReturnType<ResultType, ModalProps> {
   const addPortal = useAddPortal();
   const removePortal = useRemovePortal();
