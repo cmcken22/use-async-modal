@@ -1,6 +1,6 @@
 {
   "name": "@cmckenna/use-async-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Show promised based modal imperatively using hook for React.js.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -35,9 +35,9 @@
   "author": "Jakub Sydor <hello@fronthouse.eu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Harasz/use-async-modal/issues"
+    "url": "https://github.com/cmcken22/use-async-modal/issues"
   },
-  "homepage": "https://github.com/Harasz/use-async-modal#readme",
+  "homepage": "https://github.com/cmcken22/use-async-modal#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react": "11.2.5",
