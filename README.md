@@ -8,6 +8,9 @@ Show promised based modal imperatively using hook for React.js.
 # About
 ## This is basically the same repo as [Harasz/use-async-modal](https://github.com/Harasz/use-async-modal/blob/main/README.md) except now you can pass props to the modal upon opening! :sunglasses:
 
+&nbsp;
+&nbsp;
+
 # Table of Contents
 
 1. [Installation](#installation)
