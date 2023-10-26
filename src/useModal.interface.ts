@@ -37,4 +37,4 @@ export interface UseModalContainerRef {
   blockBodyScroll: boolean;
 }
 
-export type UseModalReturnType<ResultType = unknown> = () => Promise<ResultType>;
+export type UseModalReturnType<ResultType = unknown> = (props?: any) => Promise<ResultType>;

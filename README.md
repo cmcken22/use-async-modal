@@ -1,8 +1,12 @@
-# use-async-modal
+# @cmcken22/use-async-modal
 
 Show promised based modal imperatively using hook for React.js.
 
-![npm](https://img.shields.io/npm/v/use-async-modal?style=flat-square) ![NPM](https://img.shields.io/npm/l/use-async-modal?style=flat-square) [![Test](https://github.com/Harasz/use-async-modal/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Harasz/use-async-modal/actions/workflows/test.yml) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Harasz/use-async-modal?style=flat-square) ![npm bundle size](https://img.shields.io/bundlephobia/min/use-async-modal?style=flat-square) ![npm peer dependency version](https://img.shields.io/npm/dependency-version/use-async-modal/peer/react?style=flat-square)
+![npm](https://img.shields.io/npm/v/use-async-modal?style=flat-square) ![NPM](https://img.shields.io/npm/l/use-async-modal?style=flat-square) [![Test](https://github.com/cmcken22/use-async-modal/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/cmcken22/use-async-modal/actions/workflows/test.yml) ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/cmcken22/use-async-modal?style=flat-square) ![npm bundle size](https://img.shields.io/bundlephobia/min/use-async-modal?style=flat-square) ![npm peer dependency version](https://img.shields.io/npm/dependency-version/use-async-modal/peer/react?style=flat-square)
+
+
+# About
+## This is basically the same repo as [Harasz/use-async-modal](https://github.com/Harasz/use-async-modal/blob/main/README.md) except now you can pass props to the modal upon opening! :sunglasses:
 
 # Table of Contents
 
@@ -17,9 +21,9 @@ Show promised based modal imperatively using hook for React.js.
 You can install package using [npm](https://www.npmjs.com/package/use-async-modal) or [yarn](https://yarnpkg.com/):
 
 ```bash
-npm i use-async-modal
+npm i @cmcken22/use-async-modal
 
-yarn add use-async-modal
+yarn add @cmcken22/use-async-modal
 ```
 
 ## Usage
@@ -27,11 +31,11 @@ yarn add use-async-modal
 First, we will need a component modal to show:
 
 ```JSX
-export const Dialog = ({ onResolve }) => {
+export const Dialog = ({ onResolve, title, acceptBtnText, cancelBtnText }) => {
   return (
     <div>
-      <button onClick={() => onResolve({ accepted: true })}>Accept</button>
-      <button onClick={() => onResolve({ accepted: false })}>Cancel</button>
+      <button onClick={() => onResolve({ accepted: true })}>{acceptBtnText ?? 'Accept'}</button>
+      <button onClick={() => onResolve({ accepted: false })}>{cancelBtnText ?? 'Cancel'}</button>
     </div>
   );
 };
@@ -137,7 +141,11 @@ export const App = () => {
   });
 
   async function handleClick() {
-    const status = await showModal();
+    const status = await showModal({ 
+      title: 'Hello World',
+      acceptBtnText: 'Ok',
+      cancelBtnText: 'Deny'
+    });
     // { accepted: true } or { accepted: false }
   }
 
@@ -176,4 +184,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://github.com/Harasz/use-async-modal/blob/main/LICENSE)
+[MIT](https://github.com/cmcken22/use-async-modal/blob/main/LICENSE)

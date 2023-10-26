@@ -52,9 +52,9 @@ export function useModal<ResultType>({
     };
   };
 
-  const showModal = () => {
+  const showModal = (props: any) => {
     return new Promise<ResultType>((resolve) => {
-      createModal(resolve);
+      createModal(resolve, props);
     });
   };
 
@@ -102,7 +102,7 @@ export function useModal<ResultType>({
     });
   };
 
-  const createModal = (resolve: ResolveFunction<ResultType>) => {
+  const createModal = (resolve: ResolveFunction<ResultType>, props: any) => {
     const containerIdPostfix = getRandomPostfix();
     const body = document.querySelector("body");
     const modalContainer = document.createElement("div");
@@ -131,7 +131,7 @@ export function useModal<ResultType>({
     const containerRef: UseModalContainerRef = {
       ...onOpenOptions,
       portal: ReactDOM.createPortal(
-        <Component onResolve={handleResolve} />,
+        <Component onResolve={handleResolve} {...props} />,
         modalContainer,
         containerIdPostfix,
       ),
