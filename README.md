@@ -1,4 +1,4 @@
-# @cmcken22/use-async-modal
+# @cmckenna/use-async-modal
 
 Show promised based modal imperatively using hook for React.js.
 
@@ -21,9 +21,9 @@ Show promised based modal imperatively using hook for React.js.
 You can install package using [npm](https://www.npmjs.com/package/use-async-modal) or [yarn](https://yarnpkg.com/):
 
 ```bash
-npm i @cmcken22/use-async-modal
+npm i @cmckenna/use-async-modal
 
-yarn add @cmcken22/use-async-modal
+yarn add @cmckenna/use-async-modal
 ```
 
 ## Usage
