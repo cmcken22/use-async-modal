@@ -10,7 +10,6 @@ export type UseModalOptions<ResultType> = UseModalOptionsBasic<ResultType>;
 
 export interface UseModalOptionsBasic<ResultType> {
   Component: FC<UseModalComponentProps<ResultType>>;
-  fuck: string;
   overlayStyles?: CSSProperties;
   overlayClassName?: string;
   closeOnEsc?: boolean;

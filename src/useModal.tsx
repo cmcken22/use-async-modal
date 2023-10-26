@@ -27,13 +27,10 @@ export function useModal<ResultType, ModalProps>({
   closeTimeoutMs,
   blockBodyScroll,
   onOpen,
-  onClose,
-  fuck
+  onClose
 }: UseModalOptions<ResultType>): UseModalReturnType<ResultType, ModalProps> {
   const addPortal = useAddPortal();
   const removePortal = useRemovePortal();
-
-  console.log('fuck:', fuck);
 
   const onResolve = (resolve: ResolveFunction<ResultType>, containerIdPostfix: string) => {
     return (result: ResultType) => {
